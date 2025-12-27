@@ -29,4 +29,6 @@ jobs:
         platforms: linux/amd64,linux/arm64
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/jekyll-blog:latest
+    - name: Trigger Render deployment via Deploy Hook
+      run: curl "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
   
